@@ -3,31 +3,17 @@ package trinix.cd.cebomawigets;
 import android.content.Context;
 import android.content.res.TypedArray;
 import android.graphics.Canvas;
-import android.graphics.ColorFilter;
-import android.graphics.LinearGradient;
 import android.graphics.Paint;
 import android.graphics.Path;
-import android.graphics.Point;
-import android.graphics.Rect;
-import android.graphics.Shader;
-import android.graphics.drawable.ColorDrawable;
 import android.support.annotation.ColorInt;
 import android.support.annotation.Nullable;
 import android.util.AttributeSet;
-import android.view.KeyEvent;
 import android.view.MotionEvent;
 import android.view.View;
-import android.widget.Button;
-import android.widget.TextView;
-import android.widget.Toast;
-
-import java.util.ArrayList;
-import java.util.Calendar;
-import java.util.List;
 
 import static java.lang.Thread.sleep;
 
-public class ButtonH extends  TextView {
+public class ButtonH extends  android.support.v7.widget.AppCompatTextView {
     private Paint paint = new Paint(Paint.ANTI_ALIAS_FLAG);
 
     public ButtonH(Context context) {
@@ -42,10 +28,10 @@ public class ButtonH extends  TextView {
         if(set==null)
             return;
 
-        TypedArray ta = getContext().obtainStyledAttributes(set, R.styleable.ButtonCfc);
-        backGroungColor = ta.getColor(R.styleable.ButtonCfc_lineColor, backGroungColor);
-        fillColorPressed = ta.getColor(R.styleable.ButtonCfc_backrgroundPressedColor, fillColorPressed);
-        fillColor = ta.getColor(R.styleable.ButtonCfc_backgroundColor, fillColor);
+        TypedArray ta = getContext().obtainStyledAttributes(set, R.styleable.ButtonH);
+        backGroungColor = ta.getColor(R.styleable.ButtonH_lineColor, backGroungColor);
+        fillColorPressed = ta.getColor(R.styleable.ButtonH_backrgroundPressedColor, fillColorPressed);
+        fillColor = ta.getColor(R.styleable.ButtonH_backgroundColor, fillColor);
     }
 
     private int backGroungColor = 0xffe4bb05;

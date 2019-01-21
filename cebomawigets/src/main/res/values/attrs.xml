@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <declare-styleable name="ProfilButton">
+    <declare-styleable name="HexagoneButton">
         <attr name="fillColor" format="color"></attr>
         <attr name="backgroundImage" format="reference"></attr>
         <attr name="strokeColor" format="color"></attr>
-        <attr name="stokeWidth" format="dimension"></attr>
+        <attr name="strokeWidth" format="dimension"></attr>
         <attr name="strokePadding" format="dimension"></attr>
         <attr name="notificationTextColor" format="color"></attr>
         <attr name="notificationBackgroundColor" format="color"></attr>
     </declare-styleable>
 
-    <declare-styleable name="ButtonCfc">
+    <declare-styleable name="ButtonH">
         <attr name="lineColor" format="color"></attr>
         <attr name="backrgroundPressedColor" format="color"></attr>
         <attr name="backgroundColor" format="color"></attr>

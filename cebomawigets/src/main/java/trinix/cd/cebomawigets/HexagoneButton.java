@@ -101,10 +101,10 @@ public class HexagoneButton extends View {
         if(set==null)
             return;
 
-        TypedArray ta = getContext().obtainStyledAttributes(set, R.styleable.ProfilButton);
-        backgroundColor = ta.getColor(R.styleable.ProfilButton_fillColor, backgroundColor);
+        TypedArray ta = getContext().obtainStyledAttributes(set, R.styleable.HexagoneButton);
+        backgroundColor = ta.getColor(R.styleable.HexagoneButton_fillColor, backgroundColor);
         try {
-            Drawable drawable = ta.getDrawable(R.styleable.ProfilButton_backgroundImage);
+            Drawable drawable = ta.getDrawable(R.styleable.HexagoneButton_backgroundImage);
             if(drawable instanceof BitmapDrawable){
                 BitmapDrawable bitmapDrawable = (BitmapDrawable) drawable;
                 if(bitmapDrawable.getBitmap()!=null)
@@ -119,11 +119,11 @@ public class HexagoneButton extends View {
             image = null;
         }
 
-        strokeColor = ta.getColor(R.styleable.ProfilButton_strokeColor, strokeColor);
-        widthStroke = ta.getDimensionPixelSize(R.styleable.ProfilButton_stokeWidth, widthStroke);
-        paddingStroke = ta.getDimensionPixelOffset(R.styleable.ProfilButton_strokePadding, paddingStroke);
-        notificationFillColor = ta.getColor(R.styleable.ProfilButton_notificationBackgroundColor, notificationFillColor);
-        notificationTextColor = ta.getColor(R.styleable.ProfilButton_notificationTextColor, notificationTextColor);
+        strokeColor = ta.getColor(R.styleable.HexagoneButton_strokeColor, strokeColor);
+        widthStroke = ta.getDimensionPixelSize(R.styleable.HexagoneButton_strokeWidth, widthStroke);
+        paddingStroke = ta.getDimensionPixelOffset(R.styleable.HexagoneButton_strokePadding, paddingStroke);
+        notificationFillColor = ta.getColor(R.styleable.HexagoneButton_notificationBackgroundColor, notificationFillColor);
+        notificationTextColor = ta.getColor(R.styleable.HexagoneButton_notificationTextColor, notificationTextColor);
 
         ta.recycle();
     }
