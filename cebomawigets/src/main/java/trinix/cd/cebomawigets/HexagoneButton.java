@@ -19,7 +19,7 @@ public class HexagoneButton extends View {
     private Paint paint = new Paint(Paint.ANTI_ALIAS_FLAG);
     private int backgroundColor = 0xffffffff;
     private int strokeColor = 0xff000000;
-    private int notification = 5;
+    private int notification = 0;
     private int notificationFillColor = 0xffff0000;
     private int notificationTextColor = 0xffffffff;
     private int paddingStroke = 5;
@@ -168,7 +168,7 @@ public class HexagoneButton extends View {
             }else{
                 path.lineTo((float) x, (float) y);
                 if(i==60){
-                    path.lineTo(getWidth(),0);
+                    path.lineTo((float) x,0);
                     path.lineTo((float) x, (float) y);
                 }
 
@@ -181,29 +181,30 @@ public class HexagoneButton extends View {
 
         canvas.drawPath(path, paint);
 
-        Path stroke = new Path();
-        float rayon2 = rayon - (rayon * paddingStroke/100);
+        if(paddingStroke>0) {
+            Path stroke = new Path();
+            float rayon2 = rayon - (rayon * paddingStroke/100);
 
-        System.out.println("rayon 2 : " + rayon2 + " -- rayon1 : " + rayon );
-        for(int i=0; i<=360; i+=60){
+            System.out.println("rayon 2 : " + rayon2 + " -- rayon1 : " + rayon);
+            for (int i = 0; i <= 360; i += 60) {
 
-            float a = (float) (i*Math.PI/180);
-            double x = (Math.cos(a) * rayon2) + marginWidth + rayon ;
-            double y = (Math.sin(a) * rayon2) + marginHeight + rayon ;
+                float a = (float) (i * Math.PI / 180);
+                double x = (Math.cos(a) * rayon2) + marginWidth + rayon;
+                double y = (Math.sin(a) * rayon2) + marginHeight+rayon;
 
-            if(i==0){
-                stroke.moveTo((float) x, (float) y);
-            }else{
-                stroke.lineTo((float) x, (float) y);
+                if (i == 0) {
+                    stroke.moveTo((float) x, (float) y);
+                } else {
+                    stroke.lineTo((float) x, (float) y);
+                }
             }
+
+            paint.setColor(strokeColor);
+            paint.setStrokeWidth(widthStroke);
+            paint.setStyle(Paint.Style.STROKE);
+
+            canvas.drawPath(stroke, paint);
         }
-
-        paint.setColor(strokeColor);
-        paint.setStrokeWidth(widthStroke);
-        paint.setStyle(Paint.Style.STROKE);
-
-        canvas.drawPath(stroke, paint);
-
 
         if(notification>0){
             paint.setStrokeWidth(0);
